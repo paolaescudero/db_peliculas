@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.a-nav {
+  color:White;
+}
+.a-nav:hover {
+  color:lightgoldenrodyellow;
+}
+.a-nav:visited {
+  color:white;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Roboto', sans-serif;
+}
+header{
+  padding: 5px;
+  color:white;
+}
+footer{
+  padding: 5px;
+  color:white;
+  text-align: right;
+  padding-right: 10px;
+}
+nav ul{
+  display: flex;
+  list-style-type: none;
+}
+nav ul li{
+  margin-right: 30px;
+}
+.form-group{
+  width:50%;
+}
+.f-ye{
+  color:yellow
+}

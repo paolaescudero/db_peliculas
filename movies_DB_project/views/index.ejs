@@ -1,0 +1,18 @@
+<%- include('header') -%>
+<div class="container my-2">
+  <div class="row">
+<div class="col-12"><h2>Listado de Pelis</h2></div>
+</div>
+<ul class="list-group list-group-flush">
+  <% for (i=0; i<peliculas.length; i++){%>
+
+  <li class="list-group-item">
+    <a href="/<%= peliculas[i].id%>">
+      <%= peliculas[i].title%>
+    </a>
+  </li>
+
+  <%}%>
+  </ul>
+</div>
+  <%- include('footer') -%>

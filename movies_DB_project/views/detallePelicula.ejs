@@ -1,0 +1,49 @@
+<%- include('header') -%>
+<div class="container my-2">
+    <div class="row">
+        <div class="col-12">
+            <h2><%= pelicula.title%></h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    Duración: <%= pelicula.length%>
+                </li>
+                <li class="list-group-item">
+                    Fecha de Estreno: <%= pelicula.release_date%>
+                </li>
+                <li class="list-group-item">
+                    Premios: <%= pelicula.awards%>
+                </li>
+                <li class="list-group-item">
+                    Rating: <%= pelicula.rating%>
+                </li>
+                <li class="list-group-item">
+                    Género: <%= pelicula.genero.name%>
+                </li>
+                <li class="list-group-item">
+                    <strong>Actores:</strong>
+                    <ul class="list-group list-group-flush">
+                        <% for (i=0; i< pelicula.actores.length; i++){%>
+                        <li class="list-group-item">
+                            <%= pelicula.actores[i].first_name%> <%= pelicula.actores[i].last_name%>
+                        </li>
+                        <%}%>
+        </ul>
+    </li>
+</ul>
+</div>
+</div>
+<div class="row">
+        
+                        <a href="/editar/<%=pelicula.id%>">
+                        <button class="btn btn-success mb-1 mr-2 ml-3">Editar</button>
+                        </a>
+        
+                        <form action="/borrar/<%=pelicula.id%>" method="POST">
+                            <button class="btn btn-danger" type="submit">Borrar Peli</button>
+                        </form>
+                       
+        
+    </div>
+
+</div>
+<%- include('footer') -%>

@@ -1,0 +1,49 @@
+<%- include('header') -%>
+<h2 class="mt-2 ml-2">Editá la Peli</h2>
+
+
+<div class="form-group ml-2 my-1">
+<form action="/editar/<%=pelicula.id%>" method="POST">
+    <div>
+        <label for="" class="pt-1">Título</label>
+        <input type="text" name="titulo" class="form-control" value="<%=pelicula.title%>">
+    </div>
+    <div>
+        <label for="" class="pt-1">Premios</label>
+        <input type="text" name="premios" class="form-control" value="<%=pelicula.awards%>">
+    </div>
+    <div>
+        <label for="" class="pt-1">Duración</label>
+        <input type="text" name="duracion" class="form-control" value="<%=pelicula.length%>">
+    </div>
+    <div>
+        <label for="" class="pt-1">Rating</label>
+        <input type="text" name="rating" class="form-control" value="<%=pelicula.rating%>">
+    </div>
+    <div>
+        <label for="" class="pt-1">Fecha De Estreno</label>
+        <input type="date" name="fecha_estreno" class="form-control">
+    </div>
+    <div>
+        <label for="" class="pt-1">Género</label>
+        <select name="genero" class="form-control">
+        <% for (let i = 0; i < generos.length; i++) {%> 
+            <% if (generos[i].id == pelicula.genre_id) {%>
+
+                <option value="<%= generos[i].id%>" selected>
+                    <%= generos[i].name%>
+                </option>
+                
+            <%} else {%>
+                <option value="<%= generos[i].id%>">
+                    <%= generos[i].name%>
+                </option>
+            <%}%>
+        <%}%>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-info my-2">Editar peli</button>
+</form>
+</div>
+
+<%- include('footer') -%>
